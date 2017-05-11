@@ -45,9 +45,10 @@ namespace App3.Views
             TimeToPiker.Items.Add("12.AM");
             TimeToPiker.Items.Add("2.AM");
             TimeToPiker.Items.Add("4.AM");
-            ClubNamePicker.Title = "Club....";
-            TimeFromPiker.Title = "TimeFrom....";
-            TimeToPiker.Title = "TimeTo....";
+            
+          ///  ClubNamePicker.Title = "Club....";
+          //  TimeFromPiker.Title = "TimeFrom....";
+           // TimeToPiker.Title = "TimeTo....";
             viewModel = new ReservationsViewModels();
         }
 
