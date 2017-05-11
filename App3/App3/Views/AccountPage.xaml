@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.Views.AccountPage"
+             xmlns:ViewModels="clr-namespace:App3.SignUp"
+             Title="Reservations"
+              BackgroundColor="#F8F8FF">
+
+
+    <ContentPage.BindingContext>
+        <ViewModels:SignUpViewModels/>
+
+    </ContentPage.BindingContext>
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Update"/>
+        <ToolbarItem Text="New Reservation" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+
+    <StackLayout Spacing="20" Padding="15" VerticalOptions="CenterAndExpand">
+        <Label Text="Name" FontSize="Medium" TextColor="Black" />
+        <Entry Text="{Binding SelectDetiles.Name,Mode=TwoWay}" x:Name="NameSignup" />
+
+        <Label Text="Email" FontSize="Medium" TextColor="Black" Opacity="11.8"/>
+        <Entry Text="{Binding SelectDetiles.Email,Mode=TwoWay}" x:Name="EmailSignup" />
+
+        <Label Text="Password" FontSize="Medium" TextColor="Black" />
+        <Entry Text="{Binding SelectDetiles.Password,Mode=TwoWay}" IsPassword="True" x:Name="PasswordSignup" />
+
+        <Button Text="LogOut" FontSize="Large" TextColor="White" FontAttributes="Bold" BackgroundColor="#F57847" BorderRadius="5" HeightRequest="60"
+                x:Name="LogOutBtn" Clicked="LogOutBtn_Clicked"/>
+    </StackLayout>
+</ContentPage>

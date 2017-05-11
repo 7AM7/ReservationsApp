@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.Views.ReservationsPage"
+             Title="Reservations"
+             BackgroundColor="#F8F8FF"
+             xmlns:ViewModels="clr-namespace:App3.ViewModels">
+    <ContentPage.BindingContext>
+        <ViewModels:ReservationsViewModels/>
+        
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New Reservation" Clicked="ToolbarItem_Clicked"/>
+        <!--<SearchBar Placeholder = "Enter search term" x:Name="SearchBar" />-->
+    </ContentPage.ToolbarItems>
+    
+    
+    <!--<ContentPage.Content>
+        <StackLayout Orientation="Horizontal" Padding="20,0,0,0" >
+            <ListView x:Name="listViewTasks" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                                <Label Text="{Binding Name}" Font="Large"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding TimeFrom}"  Font="Bold" Opacity="0.6"/>
+                                    <Label Text="-"  Font="Bold" Opacity="0.6"/>
+                                    <Label Text="{Binding TimeTo}"  Font="Bold" Opacity="0.6"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>-->
+
+    <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"  x:Name="proogess"/>
+    <StackLayout>
+
+        <SearchBar Placeholder = "Search Reservations...." x:Name="SearchBar"  
+                   TextChanged="SearchBar_TextChanged"
+                   />
+    <ListView   ItemsSource="{Binding ReservationsList}"
+              HasUnevenRows="True"
+                  ItemTapped="ListView_ItemTapped"
+                    VerticalOptions="FillAndExpand"
+                    IsPullToRefreshEnabled="true"
+                    RefreshCommand="{Binding RefreshCommand}"
+                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                  x:Name="ReservaitionsList">
+        <ListView.ItemTemplate >
+            <DataTemplate>
+                <ViewCell>
+                   
+                    <StackLayout Orientation="Vertical" BackgroundColor="#F8F8FF">
+                        <Grid BackgroundColor="#F8F8FF" HeightRequest="10"/>
+                        <StackLayout Orientation="Vertical" Padding="20" BackgroundColor="White" >
+                            <Label Text="{Binding Name}" Font="Large"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding TimeFrom}"  Font="Bold" Opacity="0.6"/>
+                                <Label Text="-"  Font="Bold" Opacity="0.6"/>
+                                <Label Text="{Binding TimeTo}"  Font="Bold" Opacity="0.6"/>
+                                    <Label Text="Waiting..." Font="Bold" 
+                                           HorizontalOptions="EndAndExpand" x:Name="Statuss" Opacity="0.6" TextColor="#F57847" />
+                                </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.SignUp.LoginPage"            
+             xmlns:ViewModels="clr-namespace:App3.SignUp"
+             Title="Reservation"
+             BackgroundColor="#F8F8FF">
+
+    <ContentPage.BindingContext>
+        <ViewModels:SignUpViewModels/>
+    </ContentPage.BindingContext>
+    <StackLayout Spacing="20" Padding="15" VerticalOptions="CenterAndExpand">
+        <Label Text="Name" FontSize="Medium" TextColor="Black" />
+        <Entry Text="{Binding SelectDetiles.Name, Mode=OneWay}" x:Name="NameLogin" />
+
+        <Label Text="Password" FontSize="Medium" TextColor="Black" />
+        <Entry Text="{Binding SelectDetiles.Password, Mode=OneWay}" IsPassword="True" x:Name="PassLogin"/>
+        
+        <Button Text="Login" FontSize="Large" TextColor="White" FontAttributes="Bold" BackgroundColor="#F57847" BorderRadius="20" HeightRequest="60"
+                x:Name="LoginBtn" Clicked="LoginBtn_Clicked"
+                />
+        
+        <Button Text="Create" FontSize="Large" TextColor="White" FontAttributes="Bold" BackgroundColor="#F57847" BorderRadius="20" HeightRequest="60"
+                x:Name="SignupBtn" Clicked="SignupBtn_Clicked"
+                />
+
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.Views.About"            
+             xmlns:ViewModels="clr-namespace:App3.SignUp"
+             Title="Reservations"
+              BackgroundColor="#F8F8FF">
+
+
+    <ContentPage.BindingContext>
+        <ViewModels:SignUpViewModels/>
+
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New Reservation" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    
+    <StackLayout Spacing="20" Padding="15" VerticalOptions="CenterAndExpand">
+        <Label Text="This App Create By:AM7~" FontSize="Medium" TextColor="Black" HorizontalOptions="CenterAndExpand" Opacity="10.8"/>
+
+
+        <Button Text="FB Contact" FontSize="Large" TextColor="White" FontAttributes="Bold" BackgroundColor="#F57847" BorderRadius="5" HeightRequest="60"
+                x:Name="ConactLogOutBtn" Clicked="ConactLogOutBtn_Clicked"/>
+    </StackLayout>
+
+</ContentPage>
