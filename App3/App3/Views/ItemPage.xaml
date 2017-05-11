@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App3.Views.ItemPage"            
@@ -22,17 +22,17 @@
         
         <StackLayout Spacing="20" Padding="15">
         <!--<Label Text="Club Name" FontSize="Medium" />-->
-        <Picker x:Name="ClubNamePicker"   SelectedIndexChanged="ClubNamePicker_SelectedIndexChanged"/>
+        <Picker x:Name="ClubNamePicker"   SelectedIndexChanged="ClubNamePicker_SelectedIndexChanged" Title="{Binding SelectReservations.Name,Mode=TwoWay}"/>
         <Entry Text="{Binding SelectReservations.Name,Mode=TwoWay}" IsEnabled="False" x:Name="ClubEntry" IsVisible="False"/>
 
 
         <!--<Label Text="Time From" FontSize="Medium" />-->
-        <Picker x:Name="TimeFromPiker"  SelectedIndexChanged="TimeFromPiker_SelectedIndexChanged"/>
+        <Picker x:Name="TimeFromPiker"  SelectedIndexChanged="TimeFromPiker_SelectedIndexChanged" Title="{Binding SelectReservations.TimeFrom,Mode=TwoWay}"/>
         <Entry Text="{Binding SelectReservations.TimeFrom,Mode=TwoWay}" x:Name="TimeFromEntry" IsEnabled="False" IsVisible="False"/>
 
 
         <!--<Label Text="Time To" FontSize="Medium"/>-->
-        <Picker x:Name="TimeToPiker"  SelectedIndexChanged="TimeToPiker_SelectedIndexChanged"/>
+        <Picker x:Name="TimeToPiker"  SelectedIndexChanged="TimeToPiker_SelectedIndexChanged" Title="{Binding SelectReservations.TimeTo,Mode=TwoWay}"/>
         <Entry Text="{Binding SelectReservations.TimeTo,Mode=TwoWay}" IsEnabled="False" x:Name="TimeToEntry" IsVisible="False"/>
 
             <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
